@@ -5,7 +5,9 @@
     </div>
   </div>
 
-  <div class="popupNavi">
-    
+  <div class="popupBox">
+    <button id="popupBox" type="button" class="btn btn-primary hvr-sweep-to-left">
+        <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
