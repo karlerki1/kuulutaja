@@ -1,10 +1,11 @@
 <header>
-  <nav>
-    <ul>
-      <li><a href="#">vaata kuulutusi</a></li>
-      <li><a href="#">lisa kuulutus</a></li>
-      <li><a href="#">meist</a></li>
+  <div class="header">
+    <div class="headerContent">
+      <a href="#" class="hvr-underline-from-center">Kuulutaja</a>
+    </div>
+  </div>
 
-    </ul>
-  </nav>
+  <div class="popupNavi">
+    
+  </div>
 </header>
