@@ -12,25 +12,28 @@
 */
 Route::get('/', function () {
     return view('home');
+})->name('home');
+
+Route::get('/userss', function () {
+    return view('actions.users', ['username' => "tere"]);
+})->name('userss');
+
+Route::get('/users/{username?}', function ($username = null)
+ {
+    return view('actions.users', ['username' => $username]);
+})->name('users');
+
+
+Route::group(['prefix'=>'add'], function(){
+  Route::post('/', [
+    'uses'=> 'mainPanelController@postNewAnno',
+    'as'=>'addAnnouncement'
+    ]);
 });
 
-Route::get('/userPage', function () {
-    return view('actions.userPage');
-})->name('userPageYYYY');
-
-Route::get('/userPage/{username?}', function ($username) {
-    return view('actions.userPage', ['username' => $username]);
-})->name('userPage');
-
-Route::post('/testerPage', function(\Illuminate\Http\Request $request) {
-  if (isset($request['introtext']) && $request['category'] && $request['title']) {
-    if(strlen($request['introtext'])>0 && strlen($request['title'])>0 ){
-      return view('actions.testerPage', ['category'=> $request['category'], 'introText' => $request['introtext'], 'title'=> $request['title']]);
-    }
-
-    return redirect()->back();
-
-
-  }
-  return redirect()->back();
-})->name('addAnnouncement');
+Route::group(['prefix'=>''], function(){
+  Route::get('/',[
+    'uses'=> 'mainPanelController@getHome',
+    'as'=>'home'
+  ]);
+  });

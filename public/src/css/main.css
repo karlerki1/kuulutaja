@@ -49,6 +49,24 @@ h1{
 
 }
 
+#showAnnounsManagePanel{
+  width: 100%;
+
+}
+
+#showAnnounsContainerPanel{
+
+
+}
+.panel-default{
+  margin: 10px;
+
+}
+
+.panel-heading{
+  text-align: left;
+  text-indent: 20px;
+}
 header{
   width: 100%;
   height: auto;
@@ -101,6 +119,7 @@ ul{
   padding: 10px 10px 0px 10px;
   margin: 0;
   background-color: black;
+  padding-bottom: 10px;
 }
 
 .panel-body{
@@ -115,6 +134,45 @@ ul{
   margin: 0;
 }
 
+.pictureFrame{
+  background-color: #EEEEEE;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 200px;
+}
+
+.alignTextleft{
+  text-align:left;
+}
+
+.floatleft{
+  float:left;
+}
+
+.floatright{
+  float:right;
+}
+
+.dateLabel{
+  text-decoration: none;
+  float:left;
+  position: absolute;
+
+}
+
+.priceLabel{
+  text-decoration: none;
+  text-align: right;
+  float:right;
+  font-size: 25px;
+
+
+}
+
+.defaultAnnoPanel{
+  height: 250px;
+}
 
 /* Underline From Center */
 .hvr-underline-from-center {
@@ -200,7 +258,7 @@ ul{
 
 
 #introText{
-  width:500px;
+  width:100%;
   height:200px;
 }
 

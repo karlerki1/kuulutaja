@@ -1,0 +1,16 @@
+path:
+
+C:\xampp\htdocs\veeb\kuulutaja
+
+tee mudel:
+php artisan make:model MUDELINIMI -m
+
+Loo tabel (kui migrations\is on olemas)
+php artisan migrate
+
+php artisan make:seed SEEDINIMI
+php artisan db:seed
+
+php artisan refresh
+
+//https://laravel.com/docs/5.1/validation#available-validation-rules
