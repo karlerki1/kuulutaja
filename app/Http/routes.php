@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/', function () {
+    return view('home');
+})->name('narrowAnnoSearch');
+
 Route::get('/userss', function () {
     return view('actions.users', ['username' => "tere"]);
 })->name('userss');

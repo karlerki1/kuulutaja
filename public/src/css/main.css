@@ -140,8 +140,12 @@ ul{
   text-align: center;
   vertical-align: middle;
   line-height: 200px;
+  border-radius: 5px;
 }
 
+.priceSetter{
+  width: 30%;
+}
 .alignTextleft{
   text-align:left;
 }
@@ -172,6 +176,10 @@ ul{
 
 .defaultAnnoPanel{
   height: 250px;
+  border-style: none;
+}
+.roundEdges{
+  border-radius: 5px;
 }
 
 /* Underline From Center */
