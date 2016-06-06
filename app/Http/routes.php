@@ -42,9 +42,11 @@ Route::group(['prefix'=>''], function(){
   ]);
 });
 
-/* Api 
+
+
+/* API
 * 
-* api/v1/ on url, kus peaks json vastus tulema
+* api/v1/ on url, kus peaks json vastus tulema - vähemalt hetkel
 */
 
 Route::group(['as' => 'api::', 'prefix' => 'api/v1'], function(){
