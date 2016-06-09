@@ -30,7 +30,7 @@ Route::get('/users/{username?}', function ($username = null)
 
 Route::group(['prefix'=>'add'], function(){
   Route::post('/', [
-    'uses'=> 'mainPanelController@postNewAnno',
+    'uses'=> 'mainPanelController@NewAnnoNotAJAX',
     'as'=>'addAnnouncement'
     ]);
 });
@@ -45,3 +45,6 @@ Route::group(['prefix'=>''], function(){
     'as'=>'specifyAnno'
   ]);
   });
+
+  //Route::post('/postAnno', 'mainPanelController@postAnno')->name('postAnno');
+  Route::controller('/', 'mainPanelController');

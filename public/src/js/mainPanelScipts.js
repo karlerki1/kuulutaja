@@ -48,18 +48,18 @@ $('#specifyAnnounForm').submit(function(event){
 
 $('#submit_Announ').submit(function(event){
   if(event.preventDefault) event.preventDefault();
-  var title = $('#annoTitle').val();
-  var introText = $('#introText').val();
-  var category = $('#selectCategory').val();
-  var price = $('#price').val();
-  $.post("/add",
+  var title = $('#addedAnnoTitle').val();
+  var introText = $('#addedintroText').val();
+  var category = $('#addedselectCategory').val();
+  var price = $('#addedprice').val();
+  $.post("/",
   {title: title, introText: introText, category: category, price: price})
   .done(function(data){
     $("#addAnnoPanel").slideToggle(1000);
 
   });
 
-  alert(title);
+  alert(category,price  );
 
 
 

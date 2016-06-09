@@ -118,7 +118,7 @@
             <div class="form-group">
             		<label class="control-label col-md-5 col-xs-1" for="nr">Kuulutse rubriik:</label>
             		<div class="col-md-1 col-sm-2 col-xs-1">
-                  <select id="selectCategory" name="category" class="floatleft">
+                  <select id="addedselectCategory" name="category" class="floatleft">
                     <option value="Üritus">Üritus </option>
                     <option value="Osta">Osta </option>
                     <option value="Myy">Myy </option>
@@ -132,21 +132,21 @@
             <div class="form-group">
             		<label class="control-label col-md-5 col-xs-1" for="nr">Hind:</label>
             		<div class="col-md-1 col-sm-2 col-xs-1">
-                  <input type="number" name="price" id="price" value=65>
+                  <input type="number" name="price" id="addedprice" value=65>
             		</div>
             </div>
 
             <div class="form-group">
             	<label class="control-label col-md-5 col-xs-1" for="nr">Pealkiri/Objekt:</label>
             		<div class="col-md-3 col-sm-2 col-xs-1">
-                  <input name="title" type="text" class="form-control" id="annoTitle" value="Pealkiri">
+                  <input name="title" type="text" class="form-control" id="addedAnnoTitle" value="Pealkiri">
             		</div>
             </div>
 
             <div class="form-group">
             		<label class="control-label col-md-5 col-xs-1" for="nr">Tutvustav tekst:</label>
             		<div class="col-md-3 col-sm-2 col-xs-1">
-                  <textarea name="introText" id="introText">Tutvustav tekst...</textarea>
+                  <textarea name="introText" id="addedintroText">Tutvustav tekst...</textarea>
             		</div>
             </div>
 
