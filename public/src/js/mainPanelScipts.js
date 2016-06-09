@@ -8,6 +8,9 @@ $(document).ready(function(){
       if($("#showAboutPanel").is(":visible")){
         $("#showAboutPanel").slideToggle(1000);
       }
+
+
+
     });
 
     $("#addAnnoHref").click(function(){
@@ -29,5 +32,35 @@ $(document).ready(function(){
         $("#showAnnosPanel").slideToggle(1000);
       }
     });
+
+});
+
+$('#specifyAnnounForm').submit(function(event){
+  if(event.preventDefault) event.preventDefault();
+  var title = $('#annoTitle').val();
+
+
+  alert(title);
+
+
+
+});
+
+$('#submit_Announ').submit(function(event){
+  if(event.preventDefault) event.preventDefault();
+  var title = $('#annoTitle').val();
+  var introText = $('#introText').val();
+  var category = $('#selectCategory').val();
+  var price = $('#price').val();
+  $.post("/add",
+  {title: title, introText: introText, category: category, price: price})
+  .done(function(data){
+    $("#addAnnoPanel").slideToggle(1000);
+
+  });
+
+  alert(title);
+
+
 
 });

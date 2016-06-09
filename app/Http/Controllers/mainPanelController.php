@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use \Illuminate\Http\Request;
 use App\Announ;
+use DB;
 
 class mainPanelController extends Controller
 {
   public function getHome(){
-    $announs = Announ::all();
+
+    $announs = DB::table('announs')->paginate(20);
     return view('home', ['announs' => $announs]);
+  }
+
+  public function specifyAnno(){
+
+    $announs = DB::table('announs')->paginate(20);
+    return view('home', ['announs' => $announs]);
+  }
+
+  public function getHomee(){
+    return view('home');
   }
 
   public function postNewAnno(Request $request){
@@ -25,7 +37,7 @@ class mainPanelController extends Controller
     $announ->category= $request['category'];
     $announ->price= $request['price'];
     $announ-> save();
-    
+
     return view('actions.addedAnnou', ['category'=> $request['category'], 'introText' => $request['introText'], 'title'=> $request['title'], 'price'=> $request['price']]);
     }
   }

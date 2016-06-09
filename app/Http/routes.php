@@ -40,4 +40,8 @@ Route::group(['prefix'=>''], function(){
     'uses'=> 'mainPanelController@getHome',
     'as'=>'home'
   ]);
+  Route::get('/',[
+    'uses'=> 'mainPanelController@specifyAnno',
+    'as'=>'specifyAnno'
+  ]);
   });

@@ -7,7 +7,7 @@
 
     {{--VAATA KUULUTUSI --}}
     <a href="#" id="showAnnosHref"  >vaata kuulutusi</a>
-        <div class="panel-body" id= "showAnnosPanel" hidden>
+        <div class="panel-body" id= "showAnnosPanel" >
 
 
           <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0">
@@ -15,10 +15,11 @@
 
           <div class="col-md-2 col-sm-3 col-xs-5 ">
             <div id= "showAnnounsManagePanel"class="panel-body">
-              <form action="" method="post">
+              <form id="specifyAnnounForm">
                 <div class="form-group">
                 		<label class="floatleft">Kuulutse rubriik:</label>
                       <select id="selectCategory" name="category" class="floatleft roundEdges">
+                        <option value="Üritus">Kõik </option>
                         <option value="Üritus">Üritus </option>
                         <option value="Teade">Teade </option>
                         <option value="Osta">Soov osta </option>
@@ -47,9 +48,7 @@
                       <input name="title" type="text" class="form-control floatleft roundEdges" id="annoTitle" value="Pealkiri">
 
                 </div>
-
-                <input type="hidden" value="{{Session::token()}}" name="_token">
-                <button type="submit" class="btn btn-success col-md-12 col-sm-2 col-xs-1">Otsi</a></li>
+                <button id ="manageAnnoList" class="btn btn-success col-md-12 col-sm-2 col-xs-1">Otsi</a></li>
 
             </form>
             </div>
@@ -57,7 +56,17 @@
 
           <div class="col-md-7 col-sm-9 col-xs-10">
             <div id= "showAnnounsContainerPanel centered"class="panel-body">
+              <div id="showAnnounsEmpty">
+                <h2> Milliseid kuulutusi soovid näha? </h2>
+                <h3> Vali vasakult </h3>
+                <br><br><br>
+                <h3 class="floatleft"> <------ </h3>
+              </div>
 
+
+
+
+              <div id= "showAnnouns" hidden>
               @foreach($announs as $announ)
 
                   <div class="panel panel-default">
@@ -86,12 +95,14 @@
               @endforeach
 
             </div>
+            {{ $announs->links() }}
+          </div>
           </div>
       </div>
 
       {{--LISA KUULUTUSI --}}
         <li><a href="#" id="addAnnoHref">lisa kuulutus</a></li>
-        <div id="addAnnoPanel" class="panel-body" hidden>
+        <div id="addAnnoPanel" class="panel-body" >
 
           @if (count($errors) > 0)
             <div>
@@ -103,7 +114,7 @@
             </div>
           @endif
 
-          <form action="{{route('addAnnouncement')}}" method="post" class="form-horizontal form-label-left">
+          <form id="submit_Announ" action="{{route('addAnnouncement')}}" method="post" class="form-horizontal form-label-left">
             <div class="form-group">
             		<label class="control-label col-md-5 col-xs-1" for="nr">Kuulutse rubriik:</label>
             		<div class="col-md-1 col-sm-2 col-xs-1">
@@ -121,7 +132,7 @@
             <div class="form-group">
             		<label class="control-label col-md-5 col-xs-1" for="nr">Hind:</label>
             		<div class="col-md-1 col-sm-2 col-xs-1">
-                  <input type="number" name="price" id="price" value=65.3>
+                  <input type="number" name="price" id="price" value=65>
             		</div>
             </div>
 
