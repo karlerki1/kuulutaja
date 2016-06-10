@@ -5,20 +5,20 @@
 <div class="bignav">
     <ul>
 
+
     {{--VAATA KUULUTUSI --}}
     <a href="#" id="showAnnosHref"  >vaata kuulutusi</a>
         <div class="panel-body" id= "showAnnosPanel" >
 
 
-          <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0">
-          </div>
 
-          <div class="col-md-2 col-sm-3 col-xs-5 ">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 
+                      col-lg-offset-0 col-md-offset-0 ">
             <div id= "showAnnounsManagePanel"class="panel-body">
               <form id="specifyAnnounForm">
                 <div class="form-group">
-                		<label class="floatleft">Kuulutse rubriik:</label>
-                      <select id="selectCategory" name="category" class="floatleft roundEdges">
+                		<label class="floatleft ">Kuulutse rubriik:</label>
+                      <select id="selectCategory" name="category" class="form-control">
                         <option value="Üritus">Kõik </option>
                         <option value="Üritus">Üritus </option>
                         <option value="Teade">Teade </option>
@@ -31,15 +31,20 @@
 
                 </div>
 
-                <div class="form-group">
-                		<label class=" floatleft">Hinnavahemik:</label>
-                    <br>
-                    <div class="col-md-12 col-sm-2 col-xs-1 floatleft">
-                        <input class="floatleft roundEdges priceSetter" type="number" name="minprice" id="price" value=0>
-                        <label>-</label>
-                        <input class="floatright roundEdges priceSetter" type="number" name="maxprice" id="price" value=100>
-                      </div>
 
+
+              <div class="form-group">
+                  <label class=" floatleft">Hinnavahemik:</label>
+
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <input class="form-control" type="number" name="minprice" id="price" value=0>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                      <input class="form-control" type="number" name="maxprice" id="price" value=100>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -48,14 +53,14 @@
                       <input name="title" type="text" class="form-control floatleft roundEdges" id="annoTitle" value="Pealkiri">
 
                 </div>
-                <button id ="manageAnnoList" class="btn btn-success col-md-12 col-sm-2 col-xs-1">Otsi</a></li>
+                <button id ="manageAnnoList" class="btn btn-success col-md-12 col-sm-12 col-xs-12">Otsi</a></li>
 
             </form>
             </div>
           </div>
 
-          <div class="col-md-7 col-sm-9 col-xs-10">
-            <div id= "showAnnounsContainerPanel centered"class="panel-body">
+          <div class="col-md-7 col-sm-0 col-xs-12">
+            <div id= "showAnnounsContainerPanel" class="panel-body">
               <div id="showAnnounsEmpty">
                 <h2> Milliseid kuulutusi soovid näha? </h2>
                 <h3> Vali vasakult </h3>
@@ -103,59 +108,68 @@
       {{--LISA KUULUTUSI --}}
         <li><a href="#" id="addAnnoHref">lisa kuulutus</a></li>
         <div id="addAnnoPanel" class="panel-body" >
+            <div class="col-md-10 col-sm-12 col-xs-12">          
 
-          @if (count($errors) > 0)
-            <div>
-              <ul>
-                @foreach($errors->all() as $error)
-                  {{$error}}
-                @endforeach
-              </ul>
-            </div>
-          @endif
-
-          <form id="submit_Announ" action="{{route('addAnnouncement')}}" method="post" class="form-horizontal form-label-left">
-            <div class="form-group">
-            		<label class="control-label col-md-5 col-xs-1" for="nr">Kuulutse rubriik:</label>
-            		<div class="col-md-1 col-sm-2 col-xs-1">
-                  <select id="addedselectCategory" name="category" class="floatleft">
-                    <option value="Üritus">Üritus </option>
-                    <option value="Osta">Osta </option>
-                    <option value="Myy">Myy </option>
-                    <option value="Vaheta">Vaheta </option>
-                    <option value="Muu">Muu </option>
-                    <option value="Teade">Teade </option>
-                  </select>
-            		</div>
-            </div>
-
-            <div class="form-group">
-            		<label class="control-label col-md-5 col-xs-1" for="nr">Hind:</label>
-            		<div class="col-md-1 col-sm-2 col-xs-1">
-                  <input type="number" name="price" id="addedprice" value=65>
-            		</div>
-            </div>
+            {{--
+              @if (count($errors) > 0)
+                <div>
+                  <ul>
+                    @foreach($errors->all() as $error)
+                      {{$error}}
+                    @endforeach
+                  </ul>
+                </div>
+              @endif
+            --}}
+            
+            <form id="submit_Announ" class="form-vertical form-label-left">
+                <div class="form-group">
+                    <label class="control-label col-md-6 col-sm-12 col-xs-12 col-md-offset-4" for="nr">Kuulutse rubriik:</label>
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
+                    <select id="addedselectCategory" name="category" class="floatleft form-control">
+                        <option value="Üritus">Üritus </option>
+                        <option value="Osta">Osta </option>
+                        <option value="Myy">Myy </option>
+                        <option value="Vaheta">Vaheta </option>
+                        <option value="Muu">Muu </option>
+                        <option value="Teade">Teade </option>
+                    </select>
+                    </div>
+                </div>
 
             <div class="form-group">
-            	<label class="control-label col-md-5 col-xs-1" for="nr">Pealkiri/Objekt:</label>
-            		<div class="col-md-3 col-sm-2 col-xs-1">
+            		<label class="control-label col-md-6  col-sm-12 col-xs-12 col-md-offset-4"
+                    for="nr">Hind:</label>
+            		<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
+                        <input type="number" class="form-control" name="price" id="addedprice" value=65>
+                    </div>
+            </div>
+
+            <div class="form-group">
+            	<label class="control-label col-md-6 col-sm-12 col-xs-12 col-md-offset-4" for="nr">Pealkiri/Objekt:</label>
+            		<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
                   <input name="title" type="text" class="form-control" id="addedAnnoTitle" value="Pealkiri">
             		</div>
             </div>
 
             <div class="form-group">
-            		<label class="control-label col-md-5 col-xs-1" for="nr">Tutvustav tekst:</label>
-            		<div class="col-md-3 col-sm-2 col-xs-1">
-                  <textarea name="introText" id="addedintroText">Tutvustav tekst...</textarea>
+            		<label class="control-label col-md-6 col-sm-12 col-xs-12 col-md-offset-4" for="nr">Tutvustav tekst:</label>
+            		<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
+                  <textarea class="form-control" name="introText" id="addedintroText">Tutvustav tekst...</textarea>
             		</div>
             </div>
 
 
-            <input type="hidden" value="{{Session::token()}}" name="_token">
-            <button type="submit" class="btn btn-success">Lisa!</a></li>
+            <input type="hidden" id="token" value="{{Session::token()}}" name="_token">
 
-        </form>
-        </div>
+          <!--  {{csrf_field()}} - Niipidi saab ka :D -->
+                <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
+                <button type="submit" id="addAnnoButton" class="btn btn-success col-md-12 col-sm-12 col-xs-12">Lisa!</button>
+                </div>
+                </div>
+            </form>
+            </div>
+        
 
       {{--INFO LEHE KOHTA --}}
       <a href="#" id="showAbout">meist</a>

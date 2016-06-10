@@ -10,17 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/', function () {
-    return view('home');
-})->name('narrowAnnoSearch');
-
-Route::get('/userss', function () {
-    return view('actions.users', ['username' => "tere"]);
-})->name('userss');
 
 Route::get('/users/{username?}', function ($username = null)
  {
@@ -30,21 +19,28 @@ Route::get('/users/{username?}', function ($username = null)
 
 Route::group(['prefix'=>'add'], function(){
   Route::post('/', [
-    'uses'=> 'mainPanelController@NewAnnoNotAJAX',
+    'uses'=> 'mainPanelController@postAnno',
     'as'=>'addAnnouncement'
     ]);
 });
 
+/*
+
+Route::group(['as' => 'Guest::', 'middleware' => 'guest'], function(){
+  Route:get(['uses' => 'LoginController@index', 'as' => 'login']);
+});
+
+group, mis on nähtav ainult külalistele (kes pole sisse logitud).
+Et kui sa näiteks soovid logimislinki, siis lihtsalt: route('Guest::Login')
+*/
 Route::group(['prefix'=>''], function(){
-  Route::get('/',[
-    'uses'=> 'mainPanelController@getHome',
+  Route::post('/postAnno',[
+    'uses'=> 'mainPanelController@postAnno',
     'as'=>'home'
   ]);
+
   Route::get('/',[
     'uses'=> 'mainPanelController@specifyAnno',
     'as'=>'specifyAnno'
   ]);
   });
-
-  //Route::post('/postAnno', 'mainPanelController@postAnno')->name('postAnno');
-  Route::controller('/', 'mainPanelController');

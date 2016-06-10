@@ -52,14 +52,21 @@ $('#submit_Announ').submit(function(event){
   var introText = $('#addedintroText').val();
   var category = $('#addedselectCategory').val();
   var price = $('#addedprice').val();
-  $.post("/",
-  {title: title, introText: introText, category: category, price: price})
+  var token = $('#token').val();
+
+  $.post("http://localhost/veeb/kuulutaja/public/postAnno",
+  {title: title, introText: introText, category: category, price: price, _token: token})
   .done(function(data){
-    $("#addAnnoPanel").slideToggle(1000);
+    var message = data.message;
+    var success = data.success;
+    var announ = data.announ;
+    if(success) {
+        alert(message);
+        
+    }
+    //$("#addAnnoPanel").slideToggle(1000);
 
   });
-
-  alert(category,price  );
 
 
 
