@@ -37,46 +37,6 @@ class mainPanelController extends Controller
         $return = ['success' => true, 'len' => $announs->count(), "announs" => $announs->toArray()];
         return response()->json($return);
 
-        //Mis ta sul hetkel väljastab?? numbri?
-
-        //$announs = DB::table('announs');//->paginate(20);
-        /*
-
-        $title= Input::get('title');
-        $category= Input::get('category');
-        $minPrice= Input::get('minPrice');
-        $maxPrice= Input::get('maxPrice');
-
-
-        $query = DB::table('announs');
-        $query->orderBy('created_at' , 'desc');
-
-        if($title != "") $query->where('title', '=', $title);
-        if($category != "koik")
-        {
-            $query->where('category', '=', $category);
-        }
-
-        if(($minPrice != "")&& ($maxPrice != ""))
-        {
-            $query->whereBetween('price', [$minPrice, $maxPrice]);
-        }
-
-        if(($minPrice == "")&& ($maxPrice != ""))
-        {
-            $query->whereBetween('price', [0, $maxPrice]);
-        }
-
-        if(($minPrice != "")&& ($maxPrice == ""))
-        {
-            $query->whereBetween('price', [$minPrice, 999999]);
-        }
-
-
-        $announs = $query -> get();
-        */
-
-
       }
 
 /*

@@ -5,7 +5,7 @@
 
 
         {{--VAATA KUULUTUSI --}}
-        <a href="#" id="showAnnosHref">vaata kuulutusi</a>
+        <a href="#x" id="showAnnosHref">vaata kuulutusi</a>
         <div class="panel-body" id="showAnnosPanel">
 
 
@@ -61,18 +61,8 @@
             <div class="col-md-7 col-sm-0 col-xs-12">
                 <div id="showAnnounsContainerPanel" class="panel-body">
                     <div id="showAnnounsEmpty">
-                        <h2> Milliseid kuulutusi soovid näha? </h2>
-                        <h3> Vali vasakult </h3>
-                        <br>
-                        <br>
-                        <br>
-                        <h3 class="floatleft"> <------ </h3>
-                    </div>
-
-
-
-                    <div id="showAnnouns">
-
+                        <h2 id="findAnnouns"> Milliseid kuulutusi soovid näha? </h2>
+                        <h2 id="noAnnouns" hidden> Selliseid kuulutusi hetkel ei ole : ( </h2>
                         <!-- Only for copying -->
                         <div id="copy-that" style="display:none;">
                             <div class="announs-animate-ID" class="panel panel-default" style="display:none">
@@ -101,12 +91,19 @@
                     </div>
 
 
+
+                    <div id="showAnnouns">
+
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
 
         {{--LISA KUULUTUSI --}}
-        <li><a href="#" id="addAnnoHref">lisa kuulutus</a></li>
+        <li><a href="#x" id="addAnnoHref">lisa kuulutus</a></li>
         <div id="addAnnoPanel" class="panel-body">
             <div class="col-md-10 col-sm-12 col-xs-12">
 
@@ -163,17 +160,16 @@
                     </div>
                 </form>
             </div>
+        </div>
+
+        {{--INFO LEHE KOHTA --}}
+        <a href="#x" id="showAbout">meist</a>
+        <div class="panel-body" id="showAboutPanel" hidden>
+            Omg mida fakki ma nii kaua aega kulutasin selle porno peale? :D :DxD mulle meeeldib see lause. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        </div>
 
 
-            {{--INFO LEHE KOHTA --}}
-            <a href="#" id="showAbout">meist</a>
-            <div class="panel-body" id="showAboutPanel" hidden>
-                Omg mida fakki ma nii kaua aega kulutasin selle porno peale? :D :DxD mulle meeeldib see lause. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-            </div>
-
-
-    </ul>
-    </div>
 </div>
 @endsection

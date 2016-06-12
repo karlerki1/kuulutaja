@@ -11,7 +11,7 @@ class Announ extends Model
 
     public function scopeFilterRequest($query, Request $request)
     {
-        $title = $request->input('title', false);
+        $title = $request->input('title', '');
         $category = $request->input('category', 'koik');
         $minPrice = $request->input('minPrice', 0);
         $maxPrice = $request->input('maxPrice', 999999);
@@ -22,7 +22,9 @@ class Announ extends Model
         {
             $query->where('category', '=', $category);
         }
-
+        if($title!=''){
+             $query->where('title', '=', $title);
+        }
         if(($minPrice != "")&& ($maxPrice != "")){
             $query->whereBetween('price', [$minPrice, $maxPrice]);
         } elseif(($minPrice == "")&& ($maxPrice != "")){
@@ -35,4 +37,3 @@ class Announ extends Model
     }
 
 }
-
