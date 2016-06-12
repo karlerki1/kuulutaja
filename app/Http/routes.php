@@ -17,13 +17,6 @@ Route::get('/users/{username?}', function ($username = null)
 })->name('users');
 
 
-Route::group(['prefix'=>'add'], function(){
-  Route::post('/', [
-    'uses'=> 'mainPanelController@postAnno',
-    'as'=>'addAnnouncement'
-    ]);
-});
-
 /*
 
 Route::group(['as' => 'Guest::', 'middleware' => 'guest'], function(){
@@ -32,14 +25,30 @@ Route::group(['as' => 'Guest::', 'middleware' => 'guest'], function(){
 
 group, mis on nähtav ainult külalistele (kes pole sisse logitud).
 Et kui sa näiteks soovid logimislinki, siis lihtsalt: route('Guest::Login')
-*/
+
 Route::group(['prefix'=>''], function(){
   Route::post('/postAnno',[
     'uses'=> 'mainPanelController@postAnno',
     'as'=>'home'
   ]);
 
+  Route::get('/specifyAnno',[
+    'uses'=> 'mainPanelController@specifyAnno',
+    'as'=>'specifyAnno'
+  ]);
+  });
+*/
+
+Route::group(['prefix'=>''], function(){
   Route::get('/',[
+    'uses'=> 'mainPanelController@getHome',
+    'as'=>'getHome'
+  ]);
+  Route::post('/postAnno',[
+    'uses'=> 'mainPanelController@postAnno',
+    'as'=>'postAnno'
+  ]);
+  Route::post('/specifyAnno',[
     'uses'=> 'mainPanelController@specifyAnno',
     'as'=>'specifyAnno'
   ]);

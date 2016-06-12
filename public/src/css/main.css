@@ -73,6 +73,10 @@ margin-left: 0px;
 
 }
 
+.btn{
+    margin-top: 15px;
+}
+
 .panel-heading{
   text-align: left;
   text-indent: 20px;
@@ -84,7 +88,9 @@ header{
   padding-top: 24px;
   padding-bottom: 100px;
 }
-
+#showAnnouns .panel-heading{
+    background-color: white;
+}
 a{
   text-decoration:none;
   color: black;
