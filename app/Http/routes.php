@@ -52,4 +52,18 @@ Route::group(['prefix'=>''], function(){
     'uses'=> 'mainPanelController@specifyAnno',
     'as'=>'specifyAnno'
   ]);
-  });
+});
+
+
+
+/* API
+* 
+* api/v1/ on url, kus peaks json vastus tulema - vähemalt hetkel
+*/
+
+Route::group(['as' => 'api::', 'prefix' => 'api/v1'], function(){
+    Route::get('/', [
+        'uses' => 'jsonController@index',
+        'as' => 'index'
+    ]);
+});
